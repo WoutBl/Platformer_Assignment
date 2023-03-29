@@ -1,0 +1,1 @@
+unblurry animation frame: in animatedsprite2D, in texture: filter to nearest

@@ -1,0 +1,199 @@
+[gd_scene load_steps=10 format=3 uid="uid://bpgplf41r73ue"]
+
+[ext_resource type="Script" path="res://HUD/hudScript.gd" id="1_lmdum"]
+[ext_resource type="FontFile" uid="uid://cpricyfs6ygd0" path="res://HUD/Roboto-Regular.ttf" id="2_2asyx"]
+[ext_resource type="Texture2D" uid="uid://wjy14s778g01" path="res://PlatformerPack_1/coin1.png" id="2_sn0xq"]
+[ext_resource type="Texture2D" uid="uid://i8cdtiyv6jis" path="res://HUD/mainMenuBackground.jpg" id="4_5di35"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ier5f"]
+font = ExtResource("2_2asyx")
+font_size = 40
+outline_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ecbjt"]
+bg_color = Color(0, 0.717647, 0.345098, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 20.0
+expand_margin_top = 20.0
+expand_margin_right = 20.0
+expand_margin_bottom = 20.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_bwxr0"]
+font = ExtResource("2_2asyx")
+font_size = 64
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qudi4"]
+bg_color = Color(0.172549, 0.180392, 0.215686, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.270588, 0.270588, 0.270588, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ewcv"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.270588, 0.270588, 0.270588, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_lmdum")
+
+[node name="ScoreLabel" type="Label" parent="."]
+texture_filter = 1
+offset_left = 10.0
+offset_right = 59.0
+offset_bottom = 51.0
+text = "0"
+label_settings = SubResource("LabelSettings_ier5f")
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ScoreLabel2" type="Label" parent="."]
+texture_filter = 1
+offset_left = 13.0
+offset_right = 35.0
+offset_bottom = 51.0
+text = "0"
+label_settings = SubResource("LabelSettings_ier5f")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="XLabel" type="Label" parent="."]
+texture_filter = 1
+offset_left = 72.0
+offset_right = 97.0
+offset_bottom = 51.0
+text = "X
+"
+label_settings = SubResource("LabelSettings_ier5f")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = 97.0
+offset_top = 1.0
+offset_right = 113.0
+offset_bottom = 17.0
+scale = Vector2(3, 3)
+texture = ExtResource("2_sn0xq")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="MainMenuBackground" type="TextureRect" parent="."]
+texture_filter = 1
+clip_contents = true
+offset_right = 389.0
+offset_bottom = 223.0
+scale = Vector2(3, 3)
+texture = ExtResource("4_5di35")
+expand_mode = 1
+
+[node name="DeathLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.5
+offset_top = -39.5
+offset_right = 176.5
+offset_bottom = 39.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ecbjt")
+text = "GAME OVER
+
+Try Again!"
+label_settings = SubResource("LabelSettings_bwxr0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TitelLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -419.0
+offset_top = 27.0
+offset_right = 419.0
+offset_bottom = 264.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 1
+text = "Walter The GarbageMan
+
+Collect ALL The Coins To Win"
+label_settings = SubResource("LabelSettings_bwxr0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Start_btn" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = 28.0
+offset_right = 175.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_2asyx")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_qudi4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7ewcv")
+text = "Start Game"
+
+[node name="NoCoinsLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -419.0
+offset_top = 54.0
+offset_right = 419.0
+offset_bottom = 291.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 1
+text = "Not Enough Coins!
+
+Try Again!"
+label_settings = SubResource("LabelSettings_bwxr0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WinLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.5
+offset_top = -39.5
+offset_right = 176.5
+offset_bottom = 39.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ecbjt")
+text = "You Win!"
+label_settings = SubResource("LabelSettings_bwxr0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Start_btn" to="." method="_on_StartButton_pressed"]
